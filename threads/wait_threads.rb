@@ -2,24 +2,15 @@
 require "thwait"
 
 t1 = Thread.new do
-  10.times do |i|
-    puts "поток 1 тик #{i}"
-    sleep 0.5
-  end
+  10.times { |i| puts "поток 1 тик #{i}"; sleep 0.5 }
 end
 
 t2 = Thread.new do
-  10.times do |i|
-    puts "поток 2 тик #{i}"
-    sleep 0.7
-  end
+  10.times { |i| puts "поток 2 тик #{i}"; sleep 0.7 }
 end
 
 t3 = Thread.new do
-  10.times do |i|
-    puts "поток 3 тик #{i}"
-    sleep 0.3
-  end
+  10.times { |i| puts "поток 3 тик #{i}"; sleep 0.3 }
 end
 
 run = true
