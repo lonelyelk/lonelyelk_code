@@ -1,3 +1,4 @@
+# coding: utf-8
 $cnt = 0
 
 t1 = Thread.new do

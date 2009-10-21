@@ -1,3 +1,4 @@
+# coding: utf-8
 require "block_thread.so"
 
 t1 = Thread.new do
