@@ -9,12 +9,14 @@ t2 = Thread.new do
   10.times { |i| puts "поток 2 тик #{i}"; sleep 0.7 }
 end
 
+tw = ThreadsWait.new t1, t2
+
 t3 = Thread.new do
   10.times { |i| puts "поток 3 тик #{i}"; sleep 0.3 }
 end
 
 run = true
-tw = ThreadsWait.new t1, t2, t3
+tw.join_nowait t3
 
 while run do
   begin
