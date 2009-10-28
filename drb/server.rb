@@ -1,6 +1,5 @@
 # coding: utf-8
-$KCODE = "utf-8" if RUBY_VERSION < "1.9.0"
-require "drb/drb"
+require "common"
 
 class RemoteObject
   def remote_method_with_param(param)
@@ -21,5 +20,5 @@ end
 
 $SAFE = 1 # Запретить eval() и eval-оподобные вызовы
 
-DRb.start_service("druby://localhost:45678", RemoteObject.new)
+DRb.start_service(REM_URI, RemoteObject.new)
 DRb.thread.join

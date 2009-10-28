@@ -1,24 +1,14 @@
 # coding: utf-8
-$KCODE = "utf-8" if RUBY_VERSION < "1.9.0"
-require "drb/drb"
+require "common"
 
-class MyString
-  def initialize(str)
-    @string = str
-  end
-  
-  def do_smth
-    @string.reverse!
-  end
-  
-  def inspect
-    "<#{@string}>"
-  end
-end
+rem_o = DRbObject.new_with_uri(REM_URI)
 
-rem_o = DRbObject.new_with_uri("druby://localhost:45678")
+DRb.start_service # Это нужно для объекта, который не копируется при передаче
 
-["строка", ["котик", "пёсик", "слоник"], MyString.new("суперстрока")].each do |obj|
+["строка",
+  ["котик", "пёсик", "слоник"],
+  MyStringCopied.new("суперстрока"),
+  MyStringSingle.new("суперстрока без копий")].each do |obj|
   puts "Вызов метода вернул: #{rem_o.remote_method_with_param(obj).inspect}"
   puts "Параметр после вызова: #{obj.inspect}"
 end
