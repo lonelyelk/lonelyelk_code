@@ -4,11 +4,11 @@ require "common"
 class RemoteObject
   def remote_method_with_param(param)
     puts "вызван метод на сервере с параметром #{param.inspect}"
-    case param.class.to_s
-    when "String"
+    case param
+    when String
       puts "параметр типа строка"
       param.reverse!
-    when "Array"
+    when Array
       puts "параметр типа массив"
       param.shift
     else
