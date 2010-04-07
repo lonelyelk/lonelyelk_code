@@ -11,5 +11,11 @@ t2 = Thread.new do
   puts "Разблокируем"
 end
 
+t3 = Thread.new do
+  puts "Стараемся не блокировать"
+  BlockThread.cycle_with_schedule
+  puts "Закончили стараться"
+end
 t1.join
 t2.join
+t3.join
