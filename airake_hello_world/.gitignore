@@ -1,0 +1,5 @@
+bin
+bin-debug
+doc
+src/generated
+test/generated
