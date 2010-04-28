@@ -5,7 +5,7 @@
 <!-- AIR Application Descriptor File. See http://www.adobe.com/go/air_1.0_application_descriptor. -->
 	<id>com.exampleCompany.AirakeHelloWorld</id>
 	<name>AirakeHelloWorld</name>
-	<version>0.0.0</version>
+	<version>0.0.1</version>
 	<filename>AirakeHelloWorld</filename>
 	<description>Put description here</description>
 	<copyright>(c) 2010</copyright>
