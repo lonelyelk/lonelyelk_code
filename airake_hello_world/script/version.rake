@@ -2,7 +2,7 @@ require 'yaml'
 
 desc "Print out current version"
 task :version do
-  if md = File.read(YAML.load_file('airake.yml')["appxml_path"]).match /<version>(.*)<\/version>/
+  if md = File.read(YAML.load_file('airake.yml')["appxml_path"]).match(/<version>(.*)<\/version>/)
     puts "Current version is #{md[1]}"
   else
     raise "Cannot detect current version.\nMake sure appxml file contains <version>X.X.X</version> tag."
