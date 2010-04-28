@@ -13,3 +13,7 @@ task :adl => [ "air:adl" ] do; end
 task :docs => [ "air:docs" ] do; end
 task :clean => [ "air:clean" ] do; end
 task :acompc => [ "air:acompc" ] do; end
+
+# Custom rake tasks
+Dir.glob("script/*.rake").each { |rf| load rf }
+
