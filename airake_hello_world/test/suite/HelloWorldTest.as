@@ -14,8 +14,11 @@ package suite {
       return ts;
     }
 
+    /**
+     * Тест для примера
+     */
     public function testHelloWorld():void {
-      assertTrue("Надпись должна гласить 'Привет, Мир!'", true);
+      assertTrue("Этот тест всегда проходит", true);
     }
   }
 }

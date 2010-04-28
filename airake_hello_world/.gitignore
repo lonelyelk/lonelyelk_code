@@ -1,5 +1,6 @@
 bin
 bin-debug
 doc
-src/generated
-test/generated
+generated
+.rake_complete~
+
