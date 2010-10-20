@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+
+ps_ax = `ps ax | grep #{File.basename(__FILE__)} | grep -v grep`.split("\n").map{ |l| l.strip.split(/\s+/) }.reject{ |l| l[0].to_i == Process.pid }
+
+if ps_ax.any?
+  case ARGV[0]
+    when /stop/i
+      ps_ax.each do |l|
+        system "kill -TERM #{l[0]}"
+      end
+    when /kill/i
+      ps_ax.each do |l|
+        system "kill -KILL #{l[0]}"
+      end
+    else
+      puts "#{File.basename(__FILE__)} is already running. If you want to stop it, run './#{File.basename(__FILE__)} stop|kill'"
+  end
+else
+  pid = fork do
+    begin
+      running = true
+      Signal.trap("TERM") do
+        running = false
+      end
+      while running
+        sleep 0.01
+      end
+    rescue Exception => e
+      puts e.to_s
+      puts e.backtrace.join "\n"
+    ensure
+      exit!
+    end
+  end
+end
