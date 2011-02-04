@@ -4,7 +4,7 @@ class MyComp
   def initialize(val)
     @value = val
   end
-  
+
   def <=>(other)
     @value <=> other.value
   end

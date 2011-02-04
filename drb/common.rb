@@ -8,12 +8,12 @@ class MyStringCopied
   def initialize(str)
     @string = str
   end
-  
+
   def do_smth
     @string.reverse!
     self
   end
-  
+
   def inspect
     "<<#{@string}>>"
   end
@@ -24,14 +24,13 @@ class MyStringSingle
   def initialize(str)
     @string = str
   end
-  
+
   def do_smth
     @string.reverse!
     self
   end
-  
+
   def inspect
     "<#{@string}>"
   end
 end
-

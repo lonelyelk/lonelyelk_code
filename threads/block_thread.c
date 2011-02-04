@@ -19,7 +19,7 @@ VALUE bt_cycle(int argc, VALUE *argv, VALUE self) {
   } else if (argc > 1) {
     rb_raise(rb_eArgError, "Неправильное количество аргументов (%d вместо 0 или 1)");
   }
-  
+
   for (i=0; i<max; i++) {
     sleep(1);
   }
@@ -43,7 +43,7 @@ VALUE bt_cycle_schedule(int argc, VALUE *argv, VALUE self) {
   } else if (argc > 1) {
     rb_raise(rb_eArgError, "Неправильное количество аргументов (%d вместо 0 или 1)");
   }
-  
+
   for (i=0; i<max; i++) {
     sleep(1);
     if (!rb_thread_alone()) rb_thread_schedule();
