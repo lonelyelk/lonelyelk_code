@@ -1,0 +1,6 @@
+bin
+bin-debug
+doc
+generated
+.rake_complete~
+

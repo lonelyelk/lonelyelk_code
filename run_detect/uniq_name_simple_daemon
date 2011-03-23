@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+pid = fork do
+  begin
+    running = true
+    Signal.trap("TERM") do
+      running = false
+    end
+    while running
+      sleep 0.01
+    end
+  rescue Exception => e
+    puts e.to_s
+    puts e.backtrace.join "\n"
+  ensure
+    exit!
+  end
+end
