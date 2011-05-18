@@ -1,0 +1,13 @@
+#!/usr/bin/ruby -n
+
+BEGIN {
+  unless ARGV.size == 2
+    puts "Usage: look_for <word> <path/to/file>"
+    exit
+  end
+  str = ARGV.shift
+}
+
+next unless $_ =~ /#{str}/
+
+printf "%6s%s", $., $_.gsub($&, "\e[31m#{$&}\e[0m")

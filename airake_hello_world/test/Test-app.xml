@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<application 
+<application
 	xmlns="http://ns.adobe.com/air/application/1.5"
 	minimumPatchLevel="0">
 <!-- AIR Application Descriptor File. See http://www.adobe.com/go/air_1.0_application_descriptor. -->
@@ -36,5 +36,5 @@
 		-->
 	</icon>
 	<customUpdateUI>false</customUpdateUI>
-	<allowBrowserInvocation>false</allowBrowserInvocation>	
+	<allowBrowserInvocation>false</allowBrowserInvocation>
 </application>

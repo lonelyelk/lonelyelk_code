@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ps axo "%p %z %c" | ruby -nae 'num ||= 0; num += $F[1].to_i if $F[2] =~ /chrome/; END{puts "total chrome virtual memory size #{num} Kbytes"}'

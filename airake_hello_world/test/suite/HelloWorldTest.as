@@ -8,9 +8,9 @@ package suite {
 
     public static function suite():TestSuite {
       var ts:TestSuite = new TestSuite();
-      
+
       ts.addTest(new HelloWorldTest("testHelloWorld"));
-      
+
       return ts;
     }
 

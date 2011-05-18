@@ -17,7 +17,7 @@ namespace :version do
 
       unless `git status` =~ /nothing to commit/
         raise "There are uncommitted changes. Failed to proceed."
-      end 
+      end
 
       appxml = YAML.load_file('airake.yml')["appxml_path"]
       str = File.read(appxml)
@@ -39,7 +39,7 @@ namespace :version do
         File.open(appxml, "w") do |f|
           f.write str
         end
-        
+
         puts `git commit -am "#{msg}"`
         puts `git tag v#{new_version}`
       end
