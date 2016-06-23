@@ -1,0 +1,33 @@
+{
+  "name": "20160623_node_testing",
+  "version": "1.0.0",
+  "description": "Example of factory pattern and server testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lonelyelk/lonelyelk_code.git"
+  },
+  "keywords": [
+    "tdd",
+    "spec",
+    "jasmine",
+    "node",
+    "example",
+    "tutorial"
+  ],
+  "author": "Sergey Kruk <sergey.kruk@gmail.com> (http://lonelyelk.ru/)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/lonelyelk/lonelyelk_code/issues"
+  },
+  "homepage": "http://lonelyelk.ru/posts/56",
+  "dependencies": {
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "jasmine": "^2.4.1",
+    "request": "^2.72.0"
+  }
+}
