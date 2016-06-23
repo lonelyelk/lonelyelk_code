@@ -1,6 +1,8 @@
 Node testing patterns
 =====================
 
+This is an example that accompanies an article on [node testing patterns](http://lonelyelk.ru/posts/56).
+
 You will need gulp installed globally:
 
 ```bash
